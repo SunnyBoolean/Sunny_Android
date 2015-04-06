@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey_a"
+    android:orientation="horizontal" >
+   <!-- 
+   android:background="@drawable/geo_news_item_bg"
+    -->
+    <LinearLayout
+        android:id="@+id/layout_issue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dip"
+        android:layout_marginRight="0dip"
+        android:layout_marginTop="5dip"
+        android:layout_weight="1"
+        android:background="@color/grey_b"
+        android:orientation="vertical"
+        android:paddingTop="1dip" >
+        <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       >
+       <!-- 用户头像 -->
+       <ImageView 
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:id="@+id/user_image">
+          </ImageView>
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="张三"
+           android:layout_marginTop="5dp"
+           android:layout_marginLeft="7dp"
+           android:textSize="16sp"
+           android:layout_toRightOf="@id/user_image"
+           android:id="@+id/tv_user"/>
+       <TextView 
+           android:layout_height="wrap_content"
+           android:layout_width="wrap_content"
+           android:layout_toRightOf="@id/user_image"
+           android:layout_marginTop="2dp"
+           android:layout_marginLeft="7dp"
+           android:layout_below="@id/tv_user"
+           android:text="今天08:39"
+           android:textSize="12sp"
+           android:textColor="@color/gray"
+           android:id="@+id/tv_timeline"/>
+   </RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_b"
+            android:orientation="horizontal" >
+            <com.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/tv_detail"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:maxLines="3"
+                android:paddingBottom="5dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:paddingTop="5dip"
+                android:text="在武大吉奥附近发现一井盖"
+                android:ellipsize="end"
+                emojicon:isClickable="true"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        
+    <ImageView
+            android:id="@+id/iv_picture"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:clickable="false"
+            android:layout_marginLeft="5dp"
+           />
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:paddingBottom="5dip"
+            android:paddingLeft="5dip"
+            android:background="@color/white"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingRight="5dip" >
+           <!-- 分享 -->
+            <TextView 
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:id="@+id/note_share"
+                android:textColor="@color/black"
+                android:text="分享"/>
+          <!-- 评论 -->
+           <TextView 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:gravity="center_horizontal|center_vertical"
+               android:textColor="@color/black"
+               android:text="评论"
+               android:id="@+id/textview_comment_count"/>
+           <TextView 
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:layout_weight="1"
+               android:gravity="center_horizontal|center_vertical"
+               android:id="@+id/note_zan"
+              android:textColor="@color/black"
+               android:text="赞"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

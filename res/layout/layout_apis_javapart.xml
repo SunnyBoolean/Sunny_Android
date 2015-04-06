@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/apis_javapart"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/java_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/someone" />
+
+        <TextView 
+            android:id="@+id/java_text"
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:paddingLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:text="模糊效果"
+        android:textSize="22dp"
+        />
+        <LinearLayout 
+        android:id="@+id/controls" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:background="#7f000000" 
+        android:orientation="vertical" 
+        android:layout_gravity="bottom"/>
+</FrameLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+     android:background="@color/seagreen"
+     android:id="@+id/parent_actionbar_head"
+    >
+    <!-- 背景候选颜色：
+     teal，seagreen，cadetblue
+           主导色候选 ：     darkred，gold
+           辅色候选：skyblue，silver，lightgray，coral，powderblue
+    
+     -->
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:id="@+id/main_menu"
+        android:src="@drawable/menu"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Daily Note"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_centerInParent="true"
+        />
+      <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/main_menu_more"
+        android:src="@drawable/more"/>
+
+</RelativeLayout>

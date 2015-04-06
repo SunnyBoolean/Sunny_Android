@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="7dp"
+    android:orientation="vertical" >
+
+    <!-- 一下均为评论信息 -->
+
+    <!-- 用户头像 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/note_comment_userimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/emoji_2b05" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical" >
+
+            <!-- 用户昵称 -->
+
+            <TextView
+                android:id="@+id/note_comment_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="张三" />
+            <!-- 发表时间 -->
+
+            <TextView
+                android:id="@+id/note_comment_comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="2015-04-03"
+                android:textSize="12sp"
+                android:textColor="@color/grey" />
+            <!-- 发表评论内容 -->
+
+            <TextView
+                android:id="@+id/note_comment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="很好啊" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

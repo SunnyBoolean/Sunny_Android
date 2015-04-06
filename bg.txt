@@ -1,0 +1,28 @@
+
+  1、关于主题的编码
+     首先命名一个总主题A，然后A parent一个主题B，
+     在B中的N多个<item>中可以@style定义好的各控件主题，假设是C，而C又可以在其<item>中@style D样式....
+     那么整个应用中我们就有...D→C→B→A的关系，在AndroidManifest.zml中引用A主题即可，如有必要也可以引用B、C、D..等主题
+     这样看来我们在编写主题时，只需要编写单个的主题，然后让D或C或B来@style之即可，这样分层的好处是显而易见的。
+     
+     
+ 2、ListView的滚动状态监听：ListView.setOnScrollListener(new OnScrollListener() {});
+    http://blog.csdn.net/fxtxz2/article/details/8538696
+    
+ 3、在TextView中使用android:drawableLeft="@drawable..",属性可以再文字左边加上一张图片
+    android:drawablePadding="5dip"可以设置padding。
+  
+ 4、最普遍的模糊技术是这样做的：
+          （1）从TextView的后一层背景中截取一部分；
+          （2）进行模糊处理；
+          （3）把模糊处理后的部分设置为TextView的背景。
+        在Android中模糊处理使用的主要技术就是SDK提供的RenderScript类，
+        模糊技术参考博客：http://mobile.51cto.com/aprogram-434699.htm
+        
+ 5、使用AIDL实现进程间的通信：
+        理解：首先编写aidl接口文件，
+                    然后在Service中定义接口对象，并且实现接口中的方法
+                    最后在Activity中使用。
+ 
+  
+  

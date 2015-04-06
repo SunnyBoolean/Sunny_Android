@@ -1,0 +1,28 @@
+
+ ================sms_suzhou_v2.0=====================
+ 
+ 1、SplashActivity类作为开机画面，完成初始化动作，在AndroidMainFest.xml文件中注册为MAIN启动类，该类完成以下功能：
+     1）、拷贝数据库； ----将保存
+     2）、初始化数据库； 
+     3）、初始化系统参数； 
+     4）、数据备份上传；
+     5）、旧数据库数据所有数据导入新数据库； 
+     6）、删除过期文件；
+     7）、打开登录界面
+   其中为了安全操作，第1、2、3、4、5条均开启一个子Thread来完成。
+   并且系统初始化封装在StartUp类中
+   
+ 2、EditText的文本变化监听：addTextChangedListener(new TextWatcher(){...});
+ 
+ 3、使用xml格式与服务器交互的流程：
+          在Activity中使用AsyncTask或者自定义线程中调用ServiceClient类中的相应方法，在该方法中构造与服务器交互的
+          必要参数，构造完参数后就调用HttpRequest类中的httpRequest()方法，httpRequest方法是构造http协议的方法，
+    ServiceClient和HttpRequest均是业务逻辑封装类。程序猿自行构造封装。
+     
+ 4、在设置ListView的适配器时使用ViewHolder能够起到优化性能的作用
+ 
+ 5、XListView控件布局，可以实现刷新，在相应的Activity中要implements IXListViewListener接口
+ 
+ 6、ExpandableListView二级列表控件
+ 
+ 7、SearchView的使用，搜索

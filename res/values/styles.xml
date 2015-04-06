@@ -1,0 +1,26 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- =============== 二级Activity的ActionBar样式  ============ -->
+     <style name="NoteSecondActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:actionBarStyle">@style/actionbar</item>
+        <!-- 定义ActionBar的title -->
+         <item name="android:titleTextStyle">@color/font_white</item>
+    </style>
+    <!-- ActionBar样式  -->
+    <style name="actionbar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/shape_actionbar_bg</item>
+        <item name="android:backgroundStacked">@drawable/shape_actionbar_bg</item>
+        <item name="android:titleTextStyle">@color/font_white</item>
+    </style>
+    <!-- dialog的样式，在APIS添加记录部分使用 -->
+      <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@color/trans_blank</item>
+        <item name="android:windowBackground">@color/trans_blank</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style> 
+    
+</resources>

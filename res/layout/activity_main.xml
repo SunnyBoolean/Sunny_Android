@@ -1,0 +1,129 @@
+<com.scho.note.widget.NoteSlidMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:note="http://schemas.android.com/apk/res/com.note.ui.activity"
+    android:id="@+id/id_menu"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/test_c"
+    android:scrollbars="none"
+    note:rightPadding="90dp"
+    tools:context=".MainActivity" >
+
+    <!-- 二级父视图，左边放侧滑菜单，右边放主界面View，因此orientation为列布局 -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <!-- 侧滑菜单 -->
+
+        <include layout="@layout/slid_menu" />
+
+        <!-- 主界面 ，三级父视图，此视图下首先布局一个界面头部，其次include一个FrameLayout，最后将RadioButton布局在最下面 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/silver"
+            android:orientation="vertical" >
+
+            <!-- 主界面头部 
+            
+            
+            -->
+            <include
+                android:id="@+id/actionbar_head"
+                layout="@layout/layout_actionbar_head" />
+
+            
+            <FrameLayout
+                android:id="@+id/maintabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+            </FrameLayout>
+            <!-- 四级父视图，用于布局 主界面底部的按钮-->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="55dip"
+                android:layout_marginTop="-10dip"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/bg_bottom_menu"
+                    android:baselineAligned="false"
+                    android:clipChildren="false"
+                    android:layerType="software"
+                    android:measureWithLargestChild="true"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/home_btn"
+                        android:layout_width="0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawablePadding="0dip"
+                        android:drawableTop="@drawable/ic_sy"
+                        android:gravity="center"
+                        android:paddingTop="5dip"
+                        android:text="首页"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/repord_btn"
+                        android:layout_width="0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawablePadding="0dip"
+                        android:drawableTop="@drawable/ic_sy"
+                        android:gravity="center"
+                        android:paddingTop="5dip"
+                        android:text="打卡"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/relations_btn"
+                        android:layout_width="0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawablePadding="0dip"
+                        android:drawableTop="@drawable/ic_sy"
+                        android:gravity="center"
+                        android:paddingTop="5dip"
+                        android:text="人脉"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/discover_btn"
+                        android:layout_width="0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:button="@null"
+                        android:drawablePadding="0dip"
+                        android:drawableTop="@drawable/ic_sy"
+                        android:gravity="center"
+                        android:paddingTop="5dip"
+                        android:text="发现"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RadioGroup>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.scho.note.widget.NoteSlidMenu>
