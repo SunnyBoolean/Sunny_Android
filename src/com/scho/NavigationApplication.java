@@ -33,7 +33,7 @@ public class NavigationApplication extends Application{
         CrashHandler crashHandler = CrashHandler.getInstance();
         crashHandler.init(this.getApplicationContext());
         initBitMap();
-        AVOSCloud.initialize(this, "6ptjoad9f4yxrcpge385h68pzvxpnsurruv48l9cj3us1ap2", "2frurfepd49xkagz8py6hb4x6bn6roue61gptmcttlhi5wbg");
+        AVOSCloud.initialize(this, "6lkugskqcqi2mxc7ye0et5muo2agkar4bzm163utzom41p6u", "3vu7wkg9jkexdzyigftxln6xczvl973xrgp0xi0pa4669coj");
 	}
 	private void initBitMap() {
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
