@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_actionbar_head"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/main_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="12dp"
+        android:src="@drawable/sidebar_icon" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="武汉市"
+            android:textColor="@color/font_white"
+            android:textSize="@dimen/main_textsize" />
+
+        <TextView
+            android:id="@+id/cur_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/city_name"
+            android:layout_marginTop="8dp"
+            android:text="09:17 CST"
+            android:textColor="@color/font_white"
+            android:textSize="@dimen/lit_textSize" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/main_menu_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="12dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        android:src="@drawable/plus_icon" />
+
+</RelativeLayout>

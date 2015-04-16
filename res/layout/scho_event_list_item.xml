@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+        <!-- 互动发起人 -->
+        <TextView
+            android:id="@+id/act_peraon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="谭媛" />
+        
+        <!-- 活动发起时间 -->
+        <TextView
+            android:id="@+id/starttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_peraon"
+            android:textColor="@color/gray"
+            android:layout_marginLeft="30dp"
+            android:text="2015-04-26" />
+    </RelativeLayout>
+    <!-- 活动内容 -->
+    <TextView
+        android:id="@+id/act_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/act_content"
+        />
+
+</LinearLayout>

@@ -37,7 +37,7 @@ public class NavigationApplication extends Application{
         crashHandler.init(this.getApplicationContext());
         initBitMap();
         //初始化云服务器数据
-        AVOSCloud.initialize(this, "6ptjoad9f4yxrcpge385h68pzvxpnsurruv48l9cj3us1ap2", "2frurfepd49xkagz8py6hb4x6bn6roue61gptmcttlhi5wbg");
+        AVOSCloud.initialize(this, "423b120v8lnmczte5ytra1pdkk59pyydushys3apgybt7xuu", "qwu4ntgotsqhoxozfss3v67pj1erdtv1skq4d279tih2soy0");
 	}
 	/**
 	 * 初始化缓存图片配置

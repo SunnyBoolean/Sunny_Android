@@ -1,0 +1,31 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:background="@drawable/onboarding_5_edinburgh"
+    android:orientation="vertical">
+     <include layout="@layout/layout_head"/>
+     <!--  
+   <ListView 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp"
+       android:background="@color/listitem_bg"
+       android:id="@+id/main_list"
+       android:alpha="0.5"
+       android:divider="@drawable/shape_listitem"
+       android:layout_marginTop="5dp">
+   </ListView>
+   -->
+   <com.scho.widget.NavigationListView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp"
+       android:background="@color/listitem_bg"
+       android:id="@+id/main_list"
+       android:alpha="0.5"
+       android:divider="@drawable/shape_listitem"
+       android:layout_marginTop="5dp">
+   </com.scho.widget.NavigationListView>
+</LinearLayout>
+  

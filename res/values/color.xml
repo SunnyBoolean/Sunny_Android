@@ -21,7 +21,7 @@
      <color name="grey_a">#ECECFF</color>
      <!-- 浅灰色b -->
      <color name="grey_b">#E0E0E0</color>
-     
+     <color name="listitem_bg">#42516a</color>
      
  <color name="white">#ffffff</color><!--白色 --> 
  <color name="ivory">#fffff0</color><!--象牙色 --> 

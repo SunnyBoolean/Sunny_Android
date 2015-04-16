@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <TextView 
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:textSize="36sp"
-        android:text="首页"
-        android:gravity="center_vertical|center_horizontal"/>
+<!-- 学校活动列表 -->
+    <com.scho.widget.NavigationListView
+        android:id="@+id/scho_events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+   </com.scho.widget.NavigationListView>
 
 </LinearLayout>
