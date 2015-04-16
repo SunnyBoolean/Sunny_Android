@@ -67,7 +67,7 @@
                     android:background="@null"
                     android:button="@null"
                     android:drawablePadding="0dip"
-                    android:drawableTop="@drawable/weather"
+                    android:drawableTop="@drawable/ic_sy"
                     android:gravity="center"
                     android:paddingTop="5dip"
                     android:text="最近天气"

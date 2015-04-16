@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * @author:  hello
+ * @author:  liwei
  * @Description:  首页碎片界面
  * @date:  2015年4月16日
  */
