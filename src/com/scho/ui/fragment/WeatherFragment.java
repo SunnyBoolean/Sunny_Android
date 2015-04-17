@@ -79,11 +79,11 @@ public class WeatherFragment extends Fragment{
 		@Override
 		public void onAttach(Activity activity) {
 			// TODO Auto-generated method stub
+			mContext = activity;
 			mDisplayImageOptions = new DisplayImageOptions.Builder().cacheOnDisc()
-					.cacheInMemory().showStubImage(R.drawable.onboarding_5_edinburgh)
-					.showImageOnFail(R.drawable.onboarding_5_edinburgh)                        //设置图片加载失败的展示图片
-					.displayer(new RoundedBitmapDisplayer(35))   //设置圆角图片
-					.showImageForEmptyUri(R.drawable.onboarding_5_edinburgh).build();
+					.cacheInMemory().showStubImage(R.drawable.owidget_scatttered_thundershowers_day)
+					.showImageOnFail(R.drawable.owidget_scatttered_thundershowers_day)                        //设置图片加载失败的展示图片
+					.showImageForEmptyUri(R.drawable.owidget_scatttered_thundershowers_day).build();
 			super.onAttach(activity);
 		}
 		@Override
@@ -91,16 +91,19 @@ public class WeatherFragment extends Fragment{
 				Bundle savedInstanceState) {
 			View view = inflater.inflate(R.layout.weather_list, null);
 			mListView = (NavigationListView) view.findViewById(R.id.main_list);
+			View head = inflater.inflate(R.layout.layout_head, null);
+			mListView.addHeaderView(head);
 			mListView.setonRefreshListener(new OnRefreshListener() {  
 		            @Override  
 		            public void onRefresh() {
-		            	//开始获取天气
+		            	//刷新的时候从服务器重新获取天气
 		                getWeatherInfo();
 		            }  
 		        });  
 			mCityNameTextVIew = (TextView) view.findViewById(R.id.city_name);
 			mCurTimeTextView = (TextView) view.findViewById(R.id.cur_time);
 			mHandler = new WeatherHandler();
+			getWeatherInfo();
 			return view;
 		}
 		/**
@@ -168,7 +171,9 @@ public class WeatherFragment extends Fragment{
 						//开始加载天气图片
 //						getWeatherImage();
 						// 设置城市
-						mCityNameTextVIew.setText(mMesList.get(0).cityName);
+						if(mMesList !=null && mMesList.size()!=0){
+							mCityNameTextVIew.setText(mMesList.get(0).cityName);
+						}
 						// 设置时间
 						mCurTimeTextView.setText(getCurTime() + " CST");
 						//刷新结束
@@ -207,7 +212,7 @@ public class WeatherFragment extends Fragment{
 			List<WeatherInfo> tempList;
 			private ViewHolder viewHolder;
 
-			public ListAdapter(Context context, List list) {
+			public ListAdapter(Context context, List<WeatherInfo> list) {
 				this.resource = resource;
 				tempList = list;
 				layoutInfl = LayoutInflater.from(context);

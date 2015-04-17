@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
+<resources >
     <string name="app_name">校园百事通</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-   <string name="act_content">&#160;&#160;&#160;2015年新生篮球杯争霸赛开始了，欢迎大家围观，吐槽。</string>
+    <string name="act_content">&#160;&#160;&#160;2015年新生篮球杯争霸赛开始了，欢迎大家围观，吐槽。</string>
+    <string name="scho_profile">
+       &#160;&#160;&#160; 华中科技大学武昌分校乃世纪之交新兴本科院校，2000年8月经国家教育部批准设立，由华中科技大学和武汉军威文化传播集团合作办学。 
+华中科技大学武昌分校坐落于武昌南湖，现占地面积1000余亩，建筑总面积59万平米。现代教学与生活设施体系完善，计算机中心、语音中心、体育馆、钟楼、自主学习中心等楼群端宁恢弘，井然别致。教室、学生公寓均配置多媒体、空调、宽带网、电话等设施，师生拥有便利、舒适的环境及宽松自由信息化空间。校园林秀花香、环境幽雅，绿化率达58%以上。 
+站在新的历史起点上，华中科技大学武昌分校将继续担当教育的责任和道义，以创新精神凛然自赋，以不尽的跨越叩响时代的强音。
+</string>
 </resources>

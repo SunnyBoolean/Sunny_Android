@@ -41,7 +41,7 @@
                     android:gravity="center"
                     android:paddingTop="5dip"
                     android:textColor="@color/white"
-                    android:text="首页"
+                    android:text="学校主页"
                     android:textSize="12sp" />
 
                 <RadioButton
@@ -67,7 +67,7 @@
                     android:background="@null"
                     android:button="@null"
                     android:drawablePadding="0dip"
-                    android:drawableTop="@drawable/weather"
+                    android:drawableTop="@drawable/ic_sy"
                     android:gravity="center"
                     android:paddingTop="5dip"
                     android:text="最近天气"

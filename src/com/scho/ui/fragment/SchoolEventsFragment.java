@@ -29,7 +29,7 @@ import com.scho.widget.NavigationListView;
 import com.scho.widget.NavigationListView.OnRefreshListener;
 
 /**
- * @author:  hello
+ * @author:  liwei
  * @Description:  TODO 
  * @date:  2015Äê4ÔÂ16ÈÕ
  */
@@ -147,7 +147,6 @@ public class SchoolEventsFragment extends Fragment{
 				viewHolder.atvContent.setText(event.eventTheme);
 				viewHolder.atvPerson.setText(event.personName);
 				viewHolder.atvStartTime.setText(event.startTime);
-				
 				
 				return convertView;
 			}

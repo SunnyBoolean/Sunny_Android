@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * @author:  hello
- * @Description:  TODO 
+ * @author:  liwei
+ * @Description:  个人中心碎片 
  * @date:  2015年4月16日
  */
 public class PersonalCenterFragment extends Fragment{

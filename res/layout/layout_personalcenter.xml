@@ -4,11 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!--
+       个人中心界面设计 ：上部分一张背景图片，有用户头像、设置等信息
+        下半部分是个人中心的信息，包括：备忘录、日历、课表、等
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/personal_center_bg" />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="首页"
-        android:textSize="36sp" />
+        android:layout_height="50dp"
+        android:background="@color/grey_a" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="150dp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="100dp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="200dp"
+            android:background="@color/grey" />
+    </FrameLayout>
 
 </LinearLayout>
