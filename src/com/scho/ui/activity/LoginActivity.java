@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.scho.ui.R;
-import com.scho.ui.activity.RegisterActivity.ClickListener;
 
 /**
  * @author: liwei

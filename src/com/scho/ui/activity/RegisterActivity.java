@@ -4,7 +4,6 @@
 package com.scho.ui.activity;
 
 import com.scho.ui.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,7 +49,7 @@ public class RegisterActivity extends Activity {
    }
    /**
     * 单击事件监听
-    * @author:  hello
+    * @author:  liwei
     * @Description:  TODO 
     * @date:  2015年4月16日
     */
