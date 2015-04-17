@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +16,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,12 +28,13 @@ import com.scho.Constants;
 import com.scho.client.SchoolInfoClient;
 import com.scho.entity.EventsInfo;
 import com.scho.ui.R;
+import com.scho.ui.activity.EventsDetailsActivity;
 import com.scho.widget.NavigationListView;
 import com.scho.widget.NavigationListView.OnRefreshListener;
 
 /**
  * @author:  liwei
- * @Description:  TODO 
+ * @Description:  校园活动列表
  * @date:  2015年4月16日
  */
 public class SchoolEventsFragment extends Fragment{
@@ -69,13 +73,15 @@ public class SchoolEventsFragment extends Fragment{
 			View view = inflater.inflate(R.layout.scho_event_list, null);
 			mEventsListView = (NavigationListView) view.findViewById(R.id.scho_events);
 			mHandler = new TaskHandler();
+			getEventsData();
 			mEventsListView.setonRefreshListener(new OnRefreshListener() {  
-	            @Override  
+	            @Override
 	            public void onRefresh() {  
 	            	//这里开启子线程执行联网操作
 	            	getEventsData();
 	            }  
 	        });  
+			initListener();
 			return view;
 		}
 		/**
@@ -92,10 +98,27 @@ public class SchoolEventsFragment extends Fragment{
 				
 			}).start();
 		}
+		
+		/**
+		 * 视图监听器
+		 */
+		private void initListener(){
+			mEventsListView.setOnItemClickListener(new OnItemClickListener() {
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+                      Intent intent = new Intent();
+                      intent.setClass(mContext, EventsDetailsActivity.class);
+                      EventsInfo info = mEventsList.get(position);
+                      intent.putExtra("event", info);
+                      startActivity(intent);
+				}
+			});
+		}
 		/**
 		 * 数据列表适配器
 		 * @author:  liwei
-		 * @Description:  TODO 
+		 * @Description:  活动列表适配器 
 		 * @date:  2015年4月16日
 		 */
 		private class ListAdapter extends BaseAdapter{

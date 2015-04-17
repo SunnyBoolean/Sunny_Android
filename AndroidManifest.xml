@@ -34,6 +34,7 @@
             android:name="com.scho.ui.activity.LoginActivity"></activity>
         <activity 
             android:name="com.scho.ui.activity.RegisterActivity"></activity>
+        <activity android:name="com.scho.ui.activity.EventsDetailsActivity"></activity>
     </application>
 
 </manifest>

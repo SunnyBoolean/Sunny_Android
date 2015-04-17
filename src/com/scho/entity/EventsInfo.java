@@ -3,12 +3,14 @@
  */
 package com.scho.entity;
 
+import java.io.Serializable;
+
 /**
  * @author:  liwei
  * @Description:  活动实体类 
  * @date:  2015年4月16日
  */
-public class EventsInfo {
+public class EventsInfo implements Serializable{
     /** 活动发起人*/
 	public String personName;
 	/** 活动开始时间*/
