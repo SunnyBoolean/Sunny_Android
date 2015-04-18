@@ -8,11 +8,7 @@ import java.util.Map;
 
 
 
-
-
-import com.avos.avoscloud.AVOSCloud;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.baidu.mapapi.SDKInitializer;
 
 import android.app.Application;
 
@@ -33,10 +29,9 @@ public class NavigationApplication extends Application{
         CrashHandler crashHandler = CrashHandler.getInstance();
         crashHandler.init(this.getApplicationContext());
         initBitMap();
-        AVOSCloud.initialize(this, "6lkugskqcqi2mxc7ye0et5muo2agkar4bzm163utzom41p6u", "3vu7wkg9jkexdzyigftxln6xczvl973xrgp0xi0pa4669coj");
+     // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
+     		SDKInitializer.initialize(this);
 	}
 	private void initBitMap() {
-		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
-		ImageLoader.getInstance().init(config);
 	}
 }
