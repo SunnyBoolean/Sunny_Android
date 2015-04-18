@@ -3,11 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-<!-- 学校活动列表 -->
-    <com.scho.widget.NavigationListView
-        android:id="@+id/scho_events"
+
+    <!-- 学校风景 ，此处展示校园图片 -->
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-   </com.scho.widget.NavigationListView>
+        android:layout_height="match_parent"
+        android:src="@drawable/onboarding_5_edinburgh" >
+    </ImageView>
+"
 
 </LinearLayout>

@@ -86,6 +86,7 @@ public class MainActivity extends FragmentActivity {
 		});
 		//当用户进入应用时首先展示的是首页界面
 			changedRadioButtonByClick(mHomeRadioButton);
+			
 	}
 
 	/**
@@ -116,9 +117,9 @@ public class MainActivity extends FragmentActivity {
 			HomeFragment homeFragment = (HomeFragment) fm
 					.findFragmentByTag("home_f");
 			if (homeFragment == null) {
-				homeFragment = new HomeFragment();
+				homeFragment = HomeFragment.getInstance();
 				// 将该Fragment添加到事物中,第一个参数是Fragment的父容器，第二个参数是需要填充的Fragment，第三个参数是tag可以使用findFragmentByTag（）查找
-				ft.add(R.id.maintabcontent, homeFragment, "home_f");
+				ft.add(R.id.maintabcontent, homeFragment,"home_f");
 			}
 			// 显示首页
 			ft.show(homeFragment);
@@ -126,11 +127,11 @@ public class MainActivity extends FragmentActivity {
 			//校园活动
 		case R.id.school_events_btn:
 			SchoolEventsFragment reportFragment = (SchoolEventsFragment) fm
-					.findFragmentByTag("report_f");
+					.findFragmentByTag("events_f");
 			if (reportFragment == null) {
 				reportFragment = SchoolEventsFragment.getInstance();
 				// 将该Fragment添加到事物中,第一个参数是Fragment的父容器，第二个参数是需要填充的Fragment，第三个参数是tag可以使用findFragmentByTag（）查找
-				ft.add(R.id.maintabcontent, reportFragment, "report_f");
+				ft.add(R.id.maintabcontent, reportFragment,"events_f");
 			}
 			// 显示打卡界面
 			ft.show(reportFragment);
@@ -138,11 +139,11 @@ public class MainActivity extends FragmentActivity {
 			//最近天气
 		case R.id.weather_btn:
 			WeatherFragment relationFragment = (WeatherFragment) fm
-					.findFragmentByTag("relation_f");
+					.findFragmentByTag("weather_f");
 			if (relationFragment == null) {
 				relationFragment = WeatherFragment.getInstance();
 				// 将该Fragment添加到事物中,第一个参数是Fragment的父容器，第二个参数是需要填充的Fragment，第三个参数是tag可以使用findFragmentByTag（）查找
-				ft.add(R.id.maintabcontent, relationFragment, "relation_f");
+				ft.add(R.id.maintabcontent, relationFragment,"weather_f");
 			}
 			// 显示人脉首页
 			ft.show(relationFragment);
@@ -150,11 +151,11 @@ public class MainActivity extends FragmentActivity {
 			//个人中心
 		case R.id.personal_center_btn:
 			PersonalCenterFragment discoverFragment = (PersonalCenterFragment) fm
-					.findFragmentByTag("discover_f");
+					.findFragmentByTag("center_f");
 			if (discoverFragment == null) {
 				discoverFragment = PersonalCenterFragment.getInstance();
 				// 将该Fragment添加到事物中,第一个参数是Fragment的父容器，第二个参数是需要填充的Fragment，第三个参数是tag可以使用findFragmentByTag（）查找
-				ft.add(R.id.maintabcontent, discoverFragment, "discover_f");
+				ft.add(R.id.maintabcontent, discoverFragment,"center_f");
 			}
 			// 显示发现界面
 			ft.show(discoverFragment);

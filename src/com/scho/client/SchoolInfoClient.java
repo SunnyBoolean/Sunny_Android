@@ -4,10 +4,7 @@
 package com.scho.client;
 
 import java.util.ArrayList;
-
-
-
-
+import java.util.Date;
 import java.util.List;
 
 import com.avos.avoscloud.AVException;
@@ -16,6 +13,8 @@ import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.scho.Constants;
 import com.scho.entity.EventsInfo;
+import com.scho.utils.NoteUtil;
+import com.scho.utils.TimeUtils;
 
 /**
  * @author:  liwei
@@ -68,7 +67,10 @@ public class SchoolInfoClient {
 					info.eventLocation = obj.getString("act_location");
 					info.eventTheme = obj.getString("act_theme");
 					info.eventContent = obj.getString("act_content");
+					info.personName = obj.getString("act_person");
 					
+					Date date = obj.getCreatedAt();
+					info.startTime = NoteUtil.gelinTimeToChinaTime(date);
 					list.add(info);	
 					
 				}

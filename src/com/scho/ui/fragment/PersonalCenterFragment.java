@@ -3,6 +3,7 @@
  */
 package com.scho.ui.fragment;
 
+
 import com.scho.ui.R;
 
 import android.app.Activity;

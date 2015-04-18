@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
     <!--
        个人中心界面设计 ：上部分一张背景图片，有用户头像、设置等信息
         下半部分是个人中心的信息，包括：备忘录、日历、课表、等
     -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -18,34 +16,79 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/grey_a" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
+    <LinearLayout 
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
-
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
-
-        <TextView
+            android:layout_height="90dp"
+            android:gravity="center_vertical|center_horizontal"
+             android:background="@drawable/personal_center_selector"
+            android:layout_weight="1"
+            android:text="个人课表" />
+         <TextView 
+             android:layout_height="90dp"
+             android:layout_width="1dp"
+             android:background="@color/grey_a"/>
+          <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="150dp"
-            android:background="@color/grey" />
-
-        <TextView
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="100dp"
-            android:background="@color/grey" />
-
-        <TextView
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="200dp"
-            android:background="@color/grey" />
-    </FrameLayout>
-
+            android:layout_height="90dp"
+            android:gravity="center_vertical|center_horizontal"
+           android:background="@drawable/personal_center_selector"
+            android:layout_weight="1"
+            android:text="备忘录" />
+          <TextView 
+             android:layout_height="90dp"
+             android:layout_width="1dp"
+             android:background="@color/grey_a"/>
+           <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+             android:background="@drawable/personal_center_selector"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:text="日程安排" />
+    </LinearLayout>
+    <TextView 
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/grey_a"/>
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical|center_horizontal"
+             android:background="@drawable/personal_center_selector"
+            android:layout_weight="1"
+            android:text="我的社团" />
+         <TextView 
+             android:layout_height="90dp"
+             android:layout_width="1dp"
+             android:background="@color/grey_a"/>
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical|center_horizontal"
+         android:background="@drawable/personal_center_selector"
+            android:layout_weight="1"
+            android:text="我的奖励" />
+          <TextView 
+             android:layout_height="90dp"
+             android:layout_width="1dp"
+             android:background="@color/grey_a"/>
+           <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+           android:background="@drawable/personal_center_selector"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:text="。。。" />
+    </LinearLayout>
 </LinearLayout>

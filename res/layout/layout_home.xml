@@ -13,7 +13,7 @@
     </LinearLayout>
 
     <!-- 下半部分包括：1、学校简介 2、学校风景  3、院系设置 etc -->
-
+<!--  
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -22,43 +22,48 @@
         android:orientation="horizontal" >
 
         <TextView
+            android:id="@+id/school_profile"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/school_profile"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:text="学校简介"
             android:textColor="@color/font_white" />
 
         <TextView
+            android:id="@+id/school_scenery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/school_scenery"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:text="学校风景"
             android:textColor="@color/font_white" />
+
         <TextView
+            android:id="@+id/school_department"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/school_department"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:text="院系设置"
             android:textColor="@color/font_white" />
     </LinearLayout>
+-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/gray" />
+        <com.viewpagerindicator.TabPageIndicator
+            android:id="@+id/scho_indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
 
-    <FrameLayout
-        android:id="@+id/schol_home"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-    </FrameLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/schol_viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
 
 </LinearLayout>

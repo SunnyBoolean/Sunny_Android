@@ -12,15 +12,15 @@ import java.io.Serializable;
  */
 public class EventsInfo implements Serializable{
     /** 活动发起人*/
-	public String personName;
+	public String personName="";
 	/** 活动开始时间*/
-	public String startTime;
+	public String startTime="";
 	/** 活动结束时间*/
-	public String endTime;
+	public String endTime="";
     /** 活动地点*/	
-	public String eventLocation;
+	public String eventLocation="";
 	/** 活动名称*/
-	public String eventTheme;
+	public String eventTheme="";
 	/** 活动内容*/
-	public String eventContent;
+	public String eventContent="";
 }
