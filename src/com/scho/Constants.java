@@ -4,10 +4,12 @@
 package com.scho;
 
 /**
+ * 
  * @author:  liwei
- * @Description:  ������
- * @date:  2015��4��15��
+ * @Description:  长两类，各种code 
+ * @date:  2015年4月21日
  */
-public class Constants {
-    
+public abstract class Constants {
+	/** 定位通知，当用户进入某一地点时状态栏会发出通知*/
+    public static  int NTFY_LOCATION = 1;
 }
