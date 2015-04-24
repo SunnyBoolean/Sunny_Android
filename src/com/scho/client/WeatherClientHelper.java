@@ -44,7 +44,7 @@ public class WeatherClientHelper {
 	 * @return 返回结果数据，返回失败时是null
 	 */
 	public String getWeatherFromServe(String url) {
-		// 创建一个http请求对象
+		// 创建一个get http请求对象
 		HttpGet request = new HttpGet(url);
 		// 创建HttpParams以用来设置HTTP参数
 		HttpParams params = new BasicHttpParams();

@@ -56,7 +56,7 @@ public class RegisterActivity extends Activity {
 	    mUserPasswordEt = (EditText) findViewById(R.id.user_password);
 	    mUserPasswordConfirm = (EditText) findViewById(R.id.confirm_password);
 	    mLoginBtn = (Button) findViewById(R.id.regsiter_btn);
-	    mCancelBtn = (Button) findViewById(R.id.cancel_btn);
+	    mCancelBtn = (Button) findViewById(R.id.cancel_reg);
 	    mProgressLogin = new ProgressDialog(mContext);
 	    mProgressLogin.setMessage("×¢²áÖÐ...");
 		initListener();
@@ -144,7 +144,7 @@ public class RegisterActivity extends Activity {
 			case R.id.regsiter_btn:
 				readInput();
 				break;
-			case R.id.cancel_btn:
+			case R.id.cancel_reg:
 				finish();
 				break;
 			default:

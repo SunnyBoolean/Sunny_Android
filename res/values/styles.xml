@@ -31,4 +31,10 @@
         <item name="android:textSize">16dp</item>
         
     </style>
+    <!-- 日历样式 -->
+     <style name="main_bar_text_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">26sp</item>
+    </style>
 </resources>

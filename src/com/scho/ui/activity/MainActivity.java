@@ -1,13 +1,6 @@
 package com.scho.ui.activity;
 
-import com.scho.ui.R;
-import com.scho.ui.fragment.HomeFragment;
-import com.scho.ui.fragment.PersonalCenterFragment;
-import com.scho.ui.fragment.SchoolEventsFragment;
-import com.scho.ui.fragment.WeatherFragment;
-
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +9,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RadioButton;
+
+import com.avos.avoscloud.AVUser;
+import com.scho.ui.R;
+import com.scho.ui.fragment.HomeFragment;
+import com.scho.ui.fragment.PersonalCenterFragment;
+import com.scho.ui.fragment.SchoolEventsFragment;
+import com.scho.ui.fragment.WeatherFragment;
 
 public class MainActivity extends FragmentActivity {
 	/** 首页 */
@@ -28,6 +28,8 @@ public class MainActivity extends FragmentActivity {
 	private RadioButton mPersonalCenterButton;
 	/** 当前展示的RadioButton */
 	private RadioButton mFirstPageLayout;
+	/** 当前用户*/
+	private AVUser mCurAvuser;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,6 +39,7 @@ public class MainActivity extends FragmentActivity {
 		mWeatherButton = (RadioButton) findViewById(R.id.weather_btn);
 		mPersonalCenterButton = (RadioButton) findViewById(R.id.personal_center_btn);
 		initFragementView();
+		mCurAvuser = AVUser.getCurrentUser();
 	}
 	/**
 	 * 初始化ActionBar

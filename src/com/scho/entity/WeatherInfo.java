@@ -43,7 +43,12 @@ public class WeatherInfo {
 	public String winp;
 	/** 天气*/
     public String weather;
-    
+    /**
+     * 获取天气情况，一周天气列表
+     * @param jsonStr
+     * @param context
+     * @return
+     */
 	public static List<WeatherInfo> jsonToWeatherInfo(String jsonStr,Context context) {
 		WeatherInfo wetherInfo = null;
 		List<WeatherInfo> weatherList = new ArrayList<WeatherInfo>();

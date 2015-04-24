@@ -8,11 +8,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.LogInCallback;
@@ -45,7 +47,7 @@ public class LoginActivity extends Activity {
 		mUserNmaeEt = (EditText) findViewById(R.id.user_name);
 		mUserPasswordEt = (EditText) findViewById(R.id.user_password);
 		mLoginBtn = (Button) findViewById(R.id.login_btn);
-		mRegsinBtn = (Button) findViewById(R.id.regsiter_btn);
+		mRegsinBtn = (Button) findViewById(R.id.log_reg_btn);
 		mProgressLogin = new ProgressDialog(mContext);
 		mProgressLogin.setMessage("正在登陆...");
 		initListener();
@@ -63,11 +65,19 @@ public class LoginActivity extends Activity {
 	 * 读取用户登陆信息
 	 */
 private void readInput(){
-	AVUser avUser = new AVUser();
 	//获取用户名
 	String userName = mUserNmaeEt.getText().toString();
 	//读取用户密码
 	String userPassword = mUserPasswordEt.getText().toString();
+	if(TextUtils.isEmpty(userName)){
+		Toast.makeText(mContext, "用户名不能为空", Toast.LENGTH_SHORT).show();
+		return;
+	}
+	if(TextUtils.isEmpty(userPassword)){
+		Toast.makeText(mContext, "密码不能为空!", Toast.LENGTH_SHORT).show();
+		return;
+	}
+	mProgressLogin.show();
 	AVUser.logInInBackground(userName, userPassword, new LogInCallback() {
 		public void done(AVUser user, AVException e) {
 	        if (user != null) {
@@ -88,7 +98,7 @@ private void readInput(){
 	/**
 	 * 单击事件监听
 	 * 
-	 * @author: hello
+	 * @author: liwei
 	 * @Description: TODO
 	 * @date: 2015年4月16日
 	 */
@@ -97,11 +107,13 @@ private void readInput(){
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.login_btn:
-				mProgressLogin.show();
 				readInput();
 				break;
-			case R.id.regsiter_btn:
-
+			case R.id.log_reg_btn:
+               Intent intent = new Intent();
+               intent.setClass(mContext, RegisterActivity.class);
+               startActivity(intent);
+               finish();
 				break;
 			default:
 				break;

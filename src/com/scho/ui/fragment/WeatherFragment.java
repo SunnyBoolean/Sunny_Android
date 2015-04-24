@@ -35,7 +35,7 @@ import android.widget.TextView;
 
 /**
  * @author:  liwei
- * @Description:  TODO 
+ * @Description:  天气列表
  * @date:  2015年4月16日
  */
 public class WeatherFragment extends Fragment{
@@ -168,8 +168,6 @@ public class WeatherFragment extends Fragment{
 						}
 						//适配器数据改变
 						mAdapter.notifyDataSetChanged();
-						//开始加载天气图片
-//						getWeatherImage();
 						// 设置城市
 						if(mMesList !=null && mMesList.size()!=0){
 							mCityNameTextVIew.setText(mMesList.get(0).cityName);
@@ -181,6 +179,7 @@ public class WeatherFragment extends Fragment{
 					}
 				case 1:
 					// 天气图片改变
+					if(mAdapter !=null)
 					mAdapter.notifyDataSetChanged();
 				default:
 					break;

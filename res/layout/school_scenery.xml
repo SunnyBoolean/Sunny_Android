@@ -4,13 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!-- 学校风景 ，此处展示校园图片 -->
+    <!-- 学校风景 ，此处展示校园图片
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/onboarding_5_edinburgh" >
     </ImageView>
-"
+     -->
+     
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+    </ImageView>
+    
+    <Gallery
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spacing="2dp"
+        android:layout_marginTop="5dp"    >
+    </Gallery>
+    
 
 </LinearLayout>

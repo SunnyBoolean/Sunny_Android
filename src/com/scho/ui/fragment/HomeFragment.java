@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.scho.ui.fragment;
 
 import java.util.ArrayList;
@@ -164,7 +161,7 @@ public class HomeFragment extends Fragment {
 		/**
 		 * Tab标题
 		 */
-		protected final String[] CONTENT = new String[] { "学校简介","校园风景","教务系统" };
+		protected final String[] CONTENT = new String[] { "学校简介","校园风景","学校官网" };
 
 		private int mCount = CONTENT.length;
 		/**

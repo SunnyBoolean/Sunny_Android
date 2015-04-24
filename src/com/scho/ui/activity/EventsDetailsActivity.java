@@ -39,8 +39,8 @@ public class EventsDetailsActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.event_details);
 		mCurEventInfo = (EventsInfo) getIntent().getSerializableExtra("event");
-		mEventPerson = (TextView) findViewById(R.id.act_peraon);
-		mEventContent = (TextView) findViewById(R.id.act_content);
+		mEventPerson = (TextView) findViewById(R.id.events_user);
+		mEventContent = (TextView) findViewById(R.id.evt_content);
 		mEventEndTime = (TextView) findViewById(R.id.end_time);
 		mEventLocation = (TextView) findViewById(R.id.evt_location);
 		mEventStartTime = (TextView) findViewById(R.id.start_time);
@@ -60,7 +60,7 @@ public class EventsDetailsActivity extends Activity{
 	 * ³õÊ¼»¯ÄÚÈÝ
 	 */
 	private void initCompontent(){
-		/*
+		
 		if(mCurEventInfo !=null){
 		mEventContent.setText(mCurEventInfo.eventContent);
 		mEventEndTime.setText(mCurEventInfo.endTime);
@@ -68,7 +68,7 @@ public class EventsDetailsActivity extends Activity{
 		mEventPerson.setText(mCurEventInfo.personName);
 		mEventStartTime.setText(mCurEventInfo.startTime);
 		}
-		*/
+		
 	}
 	private class ClickListener implements OnClickListener{
 		@Override

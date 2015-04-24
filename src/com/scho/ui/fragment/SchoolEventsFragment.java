@@ -6,6 +6,7 @@ package com.scho.ui.fragment;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,21 +14,31 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.CalendarContract.EventsEntity;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.GetDataCallback;
 import com.scho.Constants;
 import com.scho.client.SchoolInfoClient;
 import com.scho.entity.EventsInfo;
 import com.scho.ui.R;
+import com.scho.ui.activity.AddNewEventsActivity;
 import com.scho.ui.activity.EventsDetailsActivity;
 import com.scho.widget.NavigationListView;
 import com.scho.widget.NavigationListView.OnRefreshListener;
@@ -50,7 +61,10 @@ public class SchoolEventsFragment extends Fragment {
 	private ArrayList<EventsInfo> mEventsList;
 	/** 异步处理类 */
 	private TaskHandler mHandler;
-
+    /** 长按和单击选中的互动*/
+	private EventsInfo mSelEventInfo;
+	/** 删除进度*/
+	private ProgressDialog mProgressDele;
 	// 获取首页碎片实例
 	public static SchoolEventsFragment getInstance() {
 		if (mInstance == null) {
@@ -61,12 +75,17 @@ public class SchoolEventsFragment extends Fragment {
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
+		
 		super.onActivityCreated(savedInstanceState);
 	}
 
 	@Override
 	public void onAttach(Activity activity) {
 		mContext = activity;
+		//设置为true，否则此碎片的men不会被调用
+		setHasOptionsMenu(true);
+		mProgressDele = new ProgressDialog(mContext);
+		mProgressDele.setMessage("正在删除..");
 		super.onAttach(activity);
 	}
 
@@ -85,10 +104,56 @@ public class SchoolEventsFragment extends Fragment {
 				getEventsData();
 			}
 		});
+		//为ListView注册长按事件
+		registerForContextMenu(mEventsListView);
 		initListener();
 		return view;
 	}
+	 @Override  
+	    public void onCreateContextMenu(ContextMenu menu, View v,  
+	            ContextMenuInfo menuInfo) {  
+	            menu.setHeaderTitle("校园活动删除");  
+	            //添加菜单项  
+	            menu.add(0,Menu.FIRST,0,"删除");  
+	        super.onCreateContextMenu(menu, v, menuInfo);  
+	    }  
+	      
+	    @Override  
+	    public boolean onContextItemSelected(MenuItem item) {  
+	        AdapterContextMenuInfo info=(AdapterContextMenuInfo)item.getMenuInfo();  
+//	        int position = (int) mEventsListView.getAdapter().getItemId(info.position);
+	        int position = info.position-1;
+	        if(position >=0 && position < mEventsList.size()){
+	        	mSelEventInfo = mEventsList.get(position);
+	        }
+	        switch (item.getItemId()) {
+			case 1:
+				//删除选中的
+				mProgressDele.show();
+			    new Thread(new Runnable(){
 
+					@Override
+					public void run() {
+						Message msg = mHandler.obtainMessage();
+						msg.what = 1;
+						//不为空就删除
+						if(mSelEventInfo !=null){
+							msg.obj =  SchoolInfoClient.deleteEvents(mSelEventInfo.eventsId, Constants.SCHO_EVENTS);
+						}else{
+							msg.obj = false;
+						}
+						mHandler.sendMessage(msg);
+					}
+			    	
+			    }).start();
+			 
+				break;
+
+			default:
+				break;
+			}
+	        return super.onContextItemSelected(item);  
+	    }  
 	/**
 	 * 从服务器获取数据
 	 */
@@ -109,6 +174,8 @@ public class SchoolEventsFragment extends Fragment {
 	 * 视图监听器
 	 */
 	private void initListener() {
+		
+		//ListView单击监听
 		mEventsListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
@@ -120,6 +187,26 @@ public class SchoolEventsFragment extends Fragment {
 				startActivity(intent);
 			}
 		});
+		
+		//ListView长按监听
+//		mEventsListView.setOnItemLongClickListener(new OnItemLongClickListener() {
+//
+//			@Override
+//			public boolean onItemLongClick(AdapterView<?> parent, View view,
+//					int position, long id) {
+//				mSelEventInfo = mEventsList.get(position-1);
+//				return true;
+//			}
+//		});
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode==12 && resultCode ==13){
+			//当用户新增一条互动后返回后从服务器加载一次
+			getEventsData();
+		}
 	}
 
 	/**
@@ -215,10 +302,43 @@ public class SchoolEventsFragment extends Fragment {
 				// 刷新结束
 				mEventsListView.onRefreshComplete();
 				break;
-
+			case 1:
+				//删除成功后从服务器获取一次刘表
+				mProgressDele.dismiss();
+				boolean isSuccess = (Boolean) msg.obj;
+				//如果删除成功就刷新列表
+				if(isSuccess){
+					getEventsData();
+					Toast.makeText(mContext, "删除成功", Toast.LENGTH_LONG).show();
+				}else{
+					Toast.makeText(mContext, "删除失败，请检查网络状态", Toast.LENGTH_LONG).show();
+				}
 			default:
 				break;
 			}
 		}
 	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.scho_events, menu);
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menu_add:
+			Intent intent = new Intent();
+			intent.setClass(mContext, AddNewEventsActivity.class);
+			startActivityForResult(intent, 12);
+			break;
+		default:
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	
+	
 }

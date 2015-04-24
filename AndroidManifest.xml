@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="17" />
  <!-- 在SDCard中创建与删除文件权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -23,8 +23,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.scho.ui.activity.MainActivity"
-            android:theme="@style/schol_home"
+            android:name="com.scho.ui.activity.SplashActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar" 
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,8 +34,21 @@
         <activity 
             android:name="com.scho.ui.activity.LoginActivity"></activity>
         <activity 
+            android:name="com.scho.ui.activity.MainActivity"
+            android:theme="@style/schol_home"></activity>
+        <activity 
             android:name="com.scho.ui.activity.RegisterActivity"></activity>
         <activity android:name="com.scho.ui.activity.EventsDetailsActivity"></activity>
+        <activity 
+            android:name="com.scho.ui.activity.AddNewEventsActivity"></activity>
+        <activity 
+            android:name="com.scho.ui.activity.PersonalMemoActivity"></activity>
+        <activity 
+            android:name="com.scho.ui.activity.PersonalScheduleActivity"></activity>
+        <activity 
+            android:name="com.scho.ui.activity.AddNewMemoActivity"></activity>
+        <activity 
+            android:name="com.scho.ui.activity.AddNewScheduleActivity"></activity>
     </application>
 
 </manifest>
