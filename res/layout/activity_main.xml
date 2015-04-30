@@ -4,16 +4,70 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity" >
-
-    <com.baidu.mapapi.map.MapView
+    <RelativeLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
+         <com.baidu.mapapi.map.MapView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        ></com.baidu.mapapi.map.MapView>
+        android:id="@+id/home_mapview"
+        />
+           <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dip" />
+         
+          <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dip"
+        android:background="@color/gray"
+        android:alpha="0.8"
+        android:minWidth="100dip"
+        android:orientation="vertical"
+        android:padding="2dp" >
+      
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="定位icon" >
+
+            <RadioButton
+                android:id="@+id/defaulticon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textColor="@color/black"
+                android:text="默认图标" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/customicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="自定义图标" >
+            </RadioButton>
+        </RadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
+   
+<TextView 
+    android:layout_height="1dp"
+    android:layout_width="match_parent"
+    android:background="@color/black"/>
 <LinearLayout 
     android:layout_height="60dp"
     android:layout_width="match_parent"
     android:gravity="center_vertical"
+    android:background="@color/grey_a"
     android:orientation="horizontal">
     <TextView 
         android:layout_height="match_parent"
@@ -22,11 +76,12 @@
         android:gravity="center_vertical|center_horizontal"
         android:textSize="18sp"
         android:id="@+id/city_search"
+        android:background="@drawable/selector_home_bg"
         android:text="城市查询"/>
     <TextView 
         android:layout_height="match_parent"
         android:layout_width="1dp"
-        android:background="@color/grey_a"/>
+        android:background="@color/gray"/>
      <TextView 
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
@@ -34,18 +89,20 @@
         android:gravity="center_vertical|center_horizontal"
          android:textSize="18sp"
          android:id="@+id/road_navigation"
+         android:background="@drawable/selector_home_bg"
         android:text="路线导航"/>
      <TextView 
         android:layout_height="match_parent"
         android:layout_width="1dp"
-        android:background="@color/grey_a"/>
+        android:background="@color/gray"/>
       <TextView 
-        android:layout_height="30dp"
+        android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:gravity="center_vertical|center_horizontal"
          android:textSize="18sp"
          android:id="@+id/around_inst"
+         android:background="@drawable/selector_home_bg"
         android:text="周边兴趣"/>
 </LinearLayout>
 </LinearLayout>
