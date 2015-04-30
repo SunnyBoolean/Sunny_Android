@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<!-- 个人备忘录 -->
+    <com.scho.widget.NavigationListView
+        android:id="@+id/personal_memo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+   </com.scho.widget.NavigationListView>
+</LinearLayout>

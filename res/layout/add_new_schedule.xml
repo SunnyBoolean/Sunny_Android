@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <!--  android:gravity="top"属性让文本从第一行开始，焦点在第一行 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="vertical">
+         <EditText
+            android:id="@+id/schedu_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape_edit"
+            android:hint="说说你要做的事..."
+            android:paddingLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:paddingTop="5dp"
+            android:gravity="top"
+            android:minLines="6" />
+    </LinearLayout>
+ <Button 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="16sp"
+        android:id="@+id/schedu_complement"
+        android:text="完成"/>
+</LinearLayout>

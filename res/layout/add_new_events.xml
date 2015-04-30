@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 活动名称 -->
+<LinearLayout 
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="活动名称" />
+
+        <EditText
+            android:id="@+id/evt_name"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" 
+            android:background="@drawable/shape_edit"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="30dp"/>
+    </LinearLayout>
+    <!-- 活动开始时间 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="开始时间" />
+
+        <TextView
+            android:id="@+id/evt_starttime"
+            android:layout_width="100dp"
+            android:background="@drawable/shape_edit"
+             android:gravity="center_vertical|center_horizontal"
+            android:text="--请选择--"
+             android:layout_marginLeft="6dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+    <!-- 活动结束时间 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            
+            android:text="结束时间" />
+
+        <TextView
+            android:id="@+id/evt_endtime"
+            android:layout_width="100dp"
+             android:gravity="center_vertical|center_horizontal"
+            android:text="--请选择--"
+            android:background="@drawable/shape_edit"
+            android:layout_marginLeft="6dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+    <!-- 活动内容 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="活动内容" />
+
+        <EditText
+            android:id="@+id/evt_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shape_edit"
+            android:layout_marginLeft="6dp"
+             android:gravity="top"
+            android:hint="说说是啥活动"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+            android:minLines="4" />
+    </LinearLayout>
+    <!-- 活动开设地点 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            
+            android:text="活动地点" />
+
+        <EditText
+            android:id="@+id/evt_location"
+            android:layout_width="match_parent"
+             android:layout_marginLeft="6dp"
+             android:background="@drawable/shape_edit"
+            android:layout_marginRight="30dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+    </LinearLayout>
+<LinearLayout 
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal">
+    <Button 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="16sp"
+        android:id="@+id/evt_complement"
+        android:text="完成"/>
+</LinearLayout>
+</LinearLayout>
